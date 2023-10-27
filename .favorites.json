@@ -1,0 +1,58 @@
+[
+    {
+        "type": "File",
+        "name": "/var/www/test.mse.su/cfg/general.inc.php",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/test.mse.su",
+        "workspacePath": "cfg/general.inc.php",
+        "id": "QyZVAtkHaM89LUKW"
+    },
+    {
+        "type": "File",
+        "name": "/var/www/test.mse.su/includes/core/class_plot.php",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/test.mse.su",
+        "workspacePath": "includes/core/class_plot.php",
+        "id": "CqUAbLQKeiBIyZ1u"
+    },
+    {
+        "type": "File",
+        "name": "/var/www/test.mse.su/includes/controllers_call/search.php",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/test.mse.su",
+        "workspacePath": "includes/controllers_call/search.php",
+        "id": "vzsl3KpMSZBkfhuN"
+    },
+    {
+        "type": "File",
+        "name": "/var/www/test.mse.su/includes/controllers_common/plots.php",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/test.mse.su",
+        "workspacePath": "includes/controllers_common/plots.php",
+        "id": "RSJGW8v5DjxThgCe"
+    },
+    {
+        "type": "File",
+        "name": "/var/www/test.mse.su/includes/controllers_common/users.php",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/test.mse.su",
+        "workspacePath": "includes/controllers_common/users.php",
+        "id": "tID78vC12wx0SNH5"
+    },
+    {
+        "type": "File",
+        "name": "/var/www/test.mse.su/includes/core/class_user.php",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/test.mse.su",
+        "workspacePath": "includes/core/class_user.php",
+        "id": "YdoJrtnEjGw5l4BD"
+    },
+    {
+        "type": "File",
+        "name": "/var/www/test.mse.su/partials/users_table.html",
+        "parent_id": null,
+        "workspaceRoot": "/var/www/test.mse.su",
+        "workspacePath": "partials/users_table.html",
+        "id": "kEFK3Jr06ARpZ8Ng"
+    }
+]

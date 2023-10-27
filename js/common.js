@@ -157,6 +157,89 @@ let common = {
             html('table', result.html);
         });
     },
+
+    // users
+
+    user_edit_window: (user_id, e) => {
+        // actions
+        cancel_event(e);
+        common.menu_popup_hide_all('all');
+        // vars
+        let data = {user_id: user_id};
+        let location = {dpt: 'user', act: 'edit_window'};
+        // call
+        request({location: location, data: data}, (result) => {
+            common.modal_show(400, result.html);
+        });
+    },
+
+    user_edit_update: (user_id = 0) => {
+        // vars
+        let first_name = gv('first_name');
+        let last_name = gv('last_name');
+        let phone = gv('phone');
+        let email = gv('email');
+        let plots = gv('plots');
+        
+       // Получить все элементы <input> внутри 'modal_body'
+        const inputElements = document.querySelectorAll('.modal_body input');
+
+        // Удалить класс 'not_filled' со всех элементов <input>
+        inputElements.forEach(inputElement => {
+            inputElement.classList.remove('not_filled');
+        });
+
+        // Перебор всех элементов <input> и добавление класса 'not_filled' к пустым полям, кроме 'plots'
+        for (let inputElement of inputElements) {
+            if (inputElement.id !== 'plots' && inputElement.value.trim() === '') {
+                inputElement.classList.add('not_filled');
+                return; // Останавливаем выполнение функции
+            }
+        }
+        
+        
+        //  || !last_name || !phone || !email) {
+        //     alert('Заполните все поля, кроме Plots, перед сохранением данных.');
+        //     return;
+        // }
+        // Найдите div для отображения сообщения об ошибке
+        // let messageDiv = document.querySelector('.error-message');
+
+        // // Проверка, если какие-либо поля, кроме Plots, не заполнены
+        // if (!first_name || !last_name || !phone || !email) {
+        //     // Отображение сообщения об ошибке с отступами
+        //     messageDiv.innerHTML = 'Заполните все поля, кроме Plots, перед сохранением данных.';
+        //     messageDiv.style.color = 'red'; // Цвет текста
+        //     messageDiv.style.padding = '10px'; // Отступы
+        //     return;
+        // }
+
+        let data = {
+            user_id: user_id,
+            first_name: first_name,
+            last_name: last_name,
+            phone: phone,
+            email: email,
+            plots: plots,
+            offset: global.offset
+        };
+        let location = {dpt: 'user', act: 'edit_update'};
+        // call
+        request({location: location, data: data}, (result) => {
+	          common.modal_hide();
+            html('table', result.html);
+        });
+    },
+
+    user_delete: (user_id) => {
+        let location = {dpt: 'user', act: 'delete'};
+        // call
+        request({location: location, data: { user_id: user_id, offset: global.offset}}, (result) => {
+	          common.modal_hide();
+            html('table', result.html);
+        });
+	
+    }
 }
 
 add_event(document, 'DOMContentLoaded', common.init);

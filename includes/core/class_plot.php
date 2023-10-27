@@ -91,9 +91,10 @@ class Plot {
         $status = isset($d['status']) && is_numeric($d['status']) ? $d['status'] : 0;
         $billing = isset($d['billing']) && in_array($d['billing'], [0,1]) ? $d['billing'] : 0;
         $number = isset($d['number']) && trim($d['number']) ? trim($d['number']) : '';
-        $size = isset($d['size']) ? preg_replace('~\D+~', '', $d['size']) : 0;
-        $price = isset($d['price']) ? preg_replace('~\D+~', '', $d['price']) : 0;
+        $size = isset($d['size']) ? (int)preg_replace('~\D+~', '', $d['size']) : 0;
+        $price = isset($d['price']) ? (int)preg_replace('~\D+~', '', $d['price']) : 0;
         $offset = isset($d['offset']) ? preg_replace('~\D+~', '', $d['offset']) : 0;
+  
         // update
         if ($plot_id) {
             $set = [];
