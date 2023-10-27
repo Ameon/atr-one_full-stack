@@ -124,14 +124,13 @@ class User {
     public static function user_edit_update($d = []) {
         // vars
         $user_id = isset($d['user_id']) && is_numeric($d['user_id']) ? $d['user_id'] : 0;
-        // $isValidate = true;
-        // $validatedFields = ['first_name', 'last_name', 'phone', 'email'];
-        // print_r('444');die();
-        // foreach($d as $key=>$val) {
-        //   if (in_array($key, $validatedFields) && empty($val))
-        //     $isValidate &= false;
-        // }
-        // if (!$isValidate) return;
+        $isValidate = true;
+        $validatedFields = ['first_name', 'last_name', 'phone', 'email'];
+        foreach($d as $key=>$val) {
+          if (in_array($key, $validatedFields) && empty($val))
+            $isValidate &= false;
+        }
+        if (!$isValidate) return;
         $first_name = $d['first_name'];
         $last_name  = $d['last_name'];
         $email = strtolower($d['email']);
